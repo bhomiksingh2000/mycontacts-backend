@@ -1,7 +1,9 @@
 const express = require("express");
+const connectDb = require("./config/dbConnection");
 const errorHandler = require("./middleware/errorHandler");
 const dotenv = require("dotenv").config();       // for reading the .env file
 
+connectDb();  // for connecting to MONGO DB Cluster
 const app = express();
 
 // port defined in .env file     (just like environment var in springboot)

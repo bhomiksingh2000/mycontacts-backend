@@ -1,18 +1,20 @@
 // controllers contain all the logic for api
-// mongodb+srv://bhomik009:yvTjR5q0QpzBAVlI@bhomikcluster.0dhc14u.mongodb.net/
 const asyncHandler = require("express-async-handler");
+const Contact = require("../models/contactModel");
+
+
 //@desc Get all contacts
 //@route GET/api/contacts
 //@access public
-
 const getContacts = asyncHandler(async (req, res) => {
-    res.status(200).json({ message: "Get all contacts" });
+    const contacts = await Contact.find();
+    res.status(200).json(contacts);
 });
+
 
 //@desc Create new contact
 //@route POST/api/contacts
 //@access public
-
 const createContact = asyncHandler(async (req, res) => {
     console.log("the req body is : " , req.body);
 
@@ -24,30 +26,36 @@ const createContact = asyncHandler(async (req, res) => {
         throw new Error("All Fields are mandatory");   
         // error message is in HTML format in api response, therefore creating a custom middleware
     }
-    res.status(200).json({ message: "Create Contact" });
+
+    const contact = await Contact.create({
+        name, 
+        email, 
+        phone,
+
+    });
+    res.status(200).json(contact);
 });
 
 
 //@desc Get specific contact
 //@route GET/api/contacts/id
 //@access public
-
 const getContact = asyncHandler(async (req, res) => {
     res.status(200).json({ message: `Get contact for ${req.params.id}` });
 });
 
+
 //@desc update contact
 //@route PUT/api/contacts/id
 //@access public
-
 const updateContact = asyncHandler(async (req, res) => {
     res.status(200).json({ message: `Update contact for ${req.params.id}` });
 });
 
+
 //@desc delete contact
 //@route DELETE/api/contacts/id
 //@access public
-
 const deleteContact = asyncHandler(async (req, res) => {
     res.status(200).json({ message: `Delete Contact for ${req.params.id}` });
 });
