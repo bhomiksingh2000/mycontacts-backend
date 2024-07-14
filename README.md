@@ -89,13 +89,6 @@ This project follows best practices in Express and Node.js development, ensuring
   - **middleware**: Custom middlewares for error handling, JWT verification, etc.
   - **config**: Configuration files for database connection, etc.
 
-## Future Improvements
-
-- Add persistent storage for session management.
-- Implement more comprehensive validation and sanitization.
-- Enhance logging and monitoring.
-- Add more comprehensive error handling.
-
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request.
