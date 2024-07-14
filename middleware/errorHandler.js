@@ -1,56 +1,51 @@
 const { constants } = require("../constants");
 
 const errorHandler = (err, req, res, next) => {
-  const statusCode = res.statusCode ? res.statusCode : 500;
-  // res.json({message : err.message, stackTrace : err.stack})
+    const statusCode = res.statusCode ? res.statusCode : 500;
 
-  // now we will get a json having message and stackTrace as key
+    // Creating a switch case for different status codes
+    switch (statusCode) {
+        case constants.VALIDATION_ERROR:
+            res.status(constants.VALIDATION_ERROR).json({
+                title: "Validation Failed",
+                message: err.message,
+                stackTrace: process.env.NODE_ENV === 'production' ? 'Hidden' : err.stack,
+            });
+            break;
 
-  // creating a swtich case for different status codes
-  switch (statusCode) {
-    case constants.VALIDATION_ERROR:
-      res.json({
-        title: "Validation Failed",
-        message: err.message,
-        stackTrace: err.stack,
-      });
-      break;
+        case constants.NOT_FOUND:
+            res.status(constants.NOT_FOUND).json({
+                title: "Not Found",
+                message: err.message,
+                stackTrace: process.env.NODE_ENV === 'production' ? 'Hidden' : err.stack,
+            });
+            break;
 
-    case constants.NOT_FOUND:
-      res.json({
-        title: "Not Found",
-        message: err.message,
-        stackTrace: err.stack,
-      });
-      break;
-    
-    case constants.UNAUTHORIZED:
-      res.json({
-        title: "Unauthorized",
-        message: err.message,
-        stackTrace: err.stack,
-      });
-      break;
-    
-    case constants.FORBIDDEN:
-      res.json({
-        title: "Forbidden",
-        message: err.message,
-        stackTrace: err.stack,
-      });
-      break;
+        case constants.UNAUTHORIZED:
+            res.status(constants.UNAUTHORIZED).json({
+                title: "Unauthorized",
+                message: err.message,
+                stackTrace: process.env.NODE_ENV === 'production' ? 'Hidden' : err.stack,
+            });
+            break;
 
-    case constants.SERVER_ERROR:
-      res.json({
-        title: "Server Error",
-        message: err.message,
-        stackTrace: err.stack,
-      });
-      break;
+        case constants.FORBIDDEN:
+            res.status(constants.FORBIDDEN).json({
+                title: "Forbidden",
+                message: err.message,
+                stackTrace: process.env.NODE_ENV === 'production' ? 'Hidden' : err.stack,
+            });
+            break;
 
-    default:
-      break;
-  }
+        case constants.SERVER_ERROR:
+        default:
+            res.status(constants.SERVER_ERROR).json({
+                title: "Server Error",
+                message: err.message,
+                stackTrace: process.env.NODE_ENV === 'production' ? 'Hidden' : err.stack,
+            });
+            break;
+    }
 };
 
 module.exports = errorHandler;
