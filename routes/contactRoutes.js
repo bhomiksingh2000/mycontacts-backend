@@ -6,6 +6,7 @@ const {
     getContact, 
     updateContact, 
     deleteContact } = require("../controllers/contactController");
+const validateToken = require("../middleware/validateTokenHandler");
 
 
 /*
@@ -20,6 +21,9 @@ router.route("/:id").put(updateContact);
 router.route("/:id").delete(deleteContact);
 */
 
+// as all the routes are private and we need to verify the user that he/she is eligible or not 
+router.use(validateToken); 
+  
 // better way
 router.route("/").get(getContacts).post(createContact);
 router.route("/:id").get(getContact).put(updateContact).delete(deleteContact);
@@ -27,3 +31,4 @@ router.route("/:id").get(getContact).put(updateContact).delete(deleteContact);
 
 // Export the router
 module.exports = router;
+
