@@ -2,7 +2,11 @@
 const asyncHandler = require("express-async-handler");
 const Contact = require("../models/contactModel");
 
+/* we will make all the routes as private , so that only a valid 
+user can access them , 
 
+
+*/
 //@desc Get all contacts
 //@route GET/api/contacts
 //@access public
@@ -33,7 +37,7 @@ const createContact = asyncHandler(async (req, res) => {
         phone,
 
     });
-    res.status(200).json(contact);
+    res.status(201).json(contact);
 });
 
 

@@ -26,6 +26,8 @@ The router will then handle the specific sub-paths and HTTP methods
 */
 app.use("/api/contacts", require("./routes/contactRoutes"));
 
+app.use("/api/users", require("./routes/userRoutes"));
+
 
 // creating a middleware for errorHandler 
 app.use(errorHandler)
