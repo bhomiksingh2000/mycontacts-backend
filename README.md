@@ -1,30 +1,65 @@
-# Contact Manager Backend Application
+Module README
 
-This project is a backend application built with Node.js, Express, MongoDB (using Mongoose), and TypeScript. It provides CRUD operations for managing contacts and includes user authentication using JWT tokens.
+    Sub Main()
+        Console.WriteLine("# Contact Manager Backend")
+        Console.WriteLine()
+        Console.WriteLine("This project is a contact manager backend application built using Node.js, Express, MongoDB with Mongoose, and JWT for authentication. It covers various aspects of building a robust backend API including routing, middlewares, database interaction, and authentication.")
+        Console.WriteLine()
+        Console.WriteLine("## Project Overview")
+        Console.WriteLine("- **Express Server**: Set up a basic Express server.")
+        Console.WriteLine("- **Routing**: Implemented CRUD operations for contacts and user authentication routes.")
+        Console.WriteLine("- **Middlewares**: Error handling middleware, async handler, JWT verification middleware.")
+        Console.WriteLine("- **Database**: Connected to MongoDB using Mongoose, with schemas for contacts and users.")
+        Console.WriteLine("- **Authentication**: Implemented JWT-based authentication for user registration and login.")
+        Console.WriteLine("- **Contact Management**: CRUD operations for managing contacts, protected routes for authenticated users.")
+        Console.WriteLine()
+        Console.WriteLine("## Setup Instructions")
+        Console.WriteLine("1. **Clone the repository:**")
+        Console.WriteLine("   ```bash")
+        Console.WriteLine("   git clone https://github.com/<YOUR_USERNAME>/<YOUR_REPOSITORY>.git")
+        Console.WriteLine("   cd <YOUR_REPOSITORY>")
+        Console.WriteLine("   ```")
+        Console.WriteLine()
+        Console.WriteLine("2. **Install dependencies:**")
+        Console.WriteLine("   ```bash")
+        Console.WriteLine("   npm install")
+        Console.WriteLine("   ```")
+        Console.WriteLine()
+        Console.WriteLine("3. **Set environment variables:**")
+        Console.WriteLine("   Create a `.env` file in the root directory with the following variables:")
+        Console.WriteLine("   ```plaintext")
+        Console.WriteLine("   PORT=3000")
+        Console.WriteLine("   MONGODB_URI=<YOUR_MONGODB_URI>")
+        Console.WriteLine("   JWT_SECRET=<YOUR_JWT_SECRET>")
+        Console.WriteLine("   ```")
+        Console.WriteLine()
+        Console.WriteLine("4. **Run the server:**")
+        Console.WriteLine("   ```bash")
+        Console.WriteLine("   npm start")
+        Console.WriteLine("   ```")
+        Console.WriteLine()
+        Console.WriteLine("5. **API Documentation:**")
+        Console.WriteLine("   - **Contacts API:**")
+        Console.WriteLine("     - `GET /api/contacts`: Get all contacts.")
+        Console.WriteLine("     - `POST /api/contacts`: Create a new contact.")
+        Console.WriteLine("     - `GET /api/contacts/:id`: Get a specific contact.")
+        Console.WriteLine("     - `PUT /api/contacts/:id`: Update a contact.")
+        Console.WriteLine("     - `DELETE /api/contacts/:id`: Delete a contact.")
+        Console.WriteLine("   - **User Authentication:**")
+        Console.WriteLine("     - `POST /api/users/register`: Register a new user.")
+        Console.WriteLine("     - `POST /api/users/login`: Login and receive JWT token.")
+        Console.WriteLine("     - `GET /api/users/current`: Get current logged-in user details.")
+        Console.WriteLine()
+        Console.WriteLine("6. **Testing:**")
+        Console.WriteLine("   Use tools like Postman or Thunder Client to test the API endpoints locally.")
+        Console.WriteLine()
+        Console.WriteLine("## Acknowledgments")
+        Console.WriteLine("- [Express.js](https://expressjs.com/)")
+        Console.WriteLine("- [MongoDB](https://www.mongodb.com/)")
+        Console.WriteLine("- [Mongoose](https://mongoosejs.com/)")
+        Console.WriteLine("- [JWT](https://jwt.io/)")
+        Console.WriteLine()
+        Console.WriteLine("Feel free to explore and modify the code according to your requirements!")
+    End Sub
 
-## Table of Contents
-
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Endpoints](#endpoints)
-- [Technologies Used](#technologies-used)
-- [Screenshots](#screenshots)
-- [Contributing](#contributing)
-- [License](#license)
-
-## Features
-
-- **Express Server**: Setting up a server using Express framework.
-- **CRUD Operations**: Create, Read, Update, and Delete operations for contacts.
-- **MongoDB with Mongoose**: Integration with MongoDB database using Mongoose ODM.
-- **Authentication**: User registration, login using JWT tokens, and protecting routes.
-- **TypeScript**: Implementing TypeScript for type safety and enhanced development experience.
-
-## Installation
-
-1. **Clone Repository:**
-
-   ```bash
-   git clone <repository-url>
-   cd contact-manager-backend
+End Module
