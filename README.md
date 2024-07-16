@@ -100,6 +100,8 @@ This project follows best practices in Express and Node.js development, ensuring
   - **routes**: Defines API endpoints and links them to controllers.
   - **middleware**: Custom middlewares for error handling, JWT verification, etc.
   - **config**: Configuration files for database connection, etc.
+  - ![WhatsApp Image 2024-07-16 at 2 32 24 PM](https://github.com/user-attachments/assets/69955ecd-439b-4c4f-8935-a8c62da11aa1)
+
 
 ## Contributing
 
