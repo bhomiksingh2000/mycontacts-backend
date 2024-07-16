@@ -51,7 +51,13 @@ The Contact Manager Backend Application is designed to manage contacts, providin
 ## Screenshots of API
 
 <img width="1440" alt="Screenshot 2024-07-14 at 6 11 04 PM" src="https://github.com/user-attachments/assets/5525e838-972f-42cf-afae-10ff421ec15e">
-
+<img width="1440" alt="Screenshot 2024-07-14 at 6 15 21 PM" src="https://github.com/user-attachments/assets/59c1112e-6a3a-48cb-8331-a916993d485c">
+<img width="1440" alt="Screenshot 2024-07-14 at 6 16 08 PM" src="https://github.com/user-attachments/assets/4100dfe7-a4d4-4ef7-b805-9172ec6bb7f4">
+<img width="1440" alt="Screenshot 2024-07-14 at 6 21 26 PM" src="https://github.com/user-attachments/assets/59f29c1b-cd98-4e8e-9251-6ecc7efee6bf">
+<img width="1440" alt="Screenshot 2024-07-14 at 6 24 48 PM" src="https://github.com/user-attachments/assets/04bef45e-3173-44cc-bf1b-1cefb0066cca">
+<img width="1440" alt="Screenshot 2024-07-14 at 6 52 42 PM" src="https://github.com/user-attachments/assets/9ff2ad4a-fd43-49c9-9c57-8641589fbd44">
+<img width="1440" alt="Screenshot 2024-07-14 at 6 56 50 PM" src="https://github.com/user-attachments/assets/525c56d3-14c2-41d9-9bf4-c0bdd2dc54f7">
+<img width="1440" alt="Screenshot 2024-07-14 at 6 57 29 PM" src="https://github.com/user-attachments/assets/f5d09123-110e-4c70-98b7-6847b9e83d01">
 
 
 ## Design Principles
@@ -62,8 +68,8 @@ This project follows best practices in Express and Node.js development, ensuring
 
 1. **Clone the Repository**:
    ```sh
-   git clone https://github.com/bhomiksingh2000/ContactManager.git
-   cd contact-manager
+   git clone https://github.com/bhomiksingh2000/mycontacts-backend.git
+   cd mycontacts-backend
    ```
 
 2. **Install Dependencies**:
@@ -74,8 +80,8 @@ This project follows best practices in Express and Node.js development, ensuring
 3. **Set Up Environment Variables**:
    Create a `.env` file in the root directory with the following content:
    ```env
-   MONGO_URI=<your_mongodb_connection_string>
-   JWT_SECRET=<your_jwt_secret>
+   CONNECTION_STRING=<your_mongodb_connection_string>
+   ACCESS_TOKEN_SECRET=<your_jwt_secret>
    ```
 
 4. **Run the Application**:
