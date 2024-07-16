@@ -47,6 +47,12 @@ The Contact Manager Backend Application is designed to manage contacts, providin
 
 - **DELETE /api/contacts/:id**: Delete a contact by ID.
   - **Status**: 200 OK / 404 Not Found
+ 
+## Screenshots of API
+
+<img width="1440" alt="Screenshot 2024-07-14 at 6 11 04 PM" src="https://github.com/user-attachments/assets/5525e838-972f-42cf-afae-10ff421ec15e">
+
+
 
 ## Design Principles
 
