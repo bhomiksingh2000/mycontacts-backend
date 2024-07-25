@@ -114,76 +114,64 @@ This project is licensed under the MIT License.
 
 
 
+### Introduction - Part 1
 
+- This is part 3 of the video series on high-level design
+- Previous 2 videos already covered
+- This part covers:
+    - Monolithic vs microservices
+    - Covering important microservices patterns
+    - Says this topic can lead to around 15 questions in interviews
 
- This is the first video in a series on high-level design, focusing on network protocols.
-- Explains the role of network protocols in communication between computers.
-- Introduces the concept of client-server and peer-to-peer models.
-- Provides insights on choosing the right protocol for specific applications like WhatsApp, Google Meet, etc.
+### Disadvantages of Monolithic Architecture
 
-### *Network Protocols:*
+- Tight Coupling
+    - Changing one line can impact other components
+    - Need to test/deploy entire application for one change
+- Difficult to scale
+    - If one component needs scaling, entire application needs to be scaled
+- Expensive deployments and rollbacks
+    - Entire application needs redeployment for a small change
+- Large codebase
+    - Everything in a single application
+    - Codebase grows large over time
+    - Difficult to make changes, understand impact
 
-- *Definition:* Network protocols define the rules and regulations for communication between systems over a network.
-- *OSI Model:* Refers to the Open Systems Interconnection Model, a layered architecture for network communication (not covered in detail).
-- *Key Layers:*
-    - *Application Layer:* Handles user-facing communication (e.g., web browsing, email).
-    - *Transport Layer:* Manages reliable data transfer between applications (e.g., TCP/UDP).
+### Why Microservices?
 
-### *Application Layer Protocols:*
+- To overcome monolithic disadvantages
+- Split large application into small services
 
-- *Client-Server Model:*
-    - *Client:* Initiates requests (e.g., web browser).
-    - *Server:* Responds to requests (e.g., web server).
-    - *Examples:* HTTP, FTP, SMTP, IMAP, Web Sockets.
-- *Peer-to-Peer Model:*
-    - *Peers:* all machines can send and receive requests from each other
-    - *Example:* File sharing, instant messaging, WebRTC.
+### Advantages of Microservices
 
-*HTTP (Hypertext Transfer Protocol):*
+- Better separation of concerns
+- Loose coupling between services
+- Independent deployment of services
+- Easy to scale out specific services
+- Faster release cycles
 
-- *Key Points:*
-    - Most widely used protocol for web communication.
-    - Connection-oriented.
-    - Used for accessing web pages, web applications.
-- *Example:* WhatsApp (uses web sockets over HTTP for messaging).
+### Disadvantages of Microservices
 
-*FTP (File Transfer Protocol):*
+- Proper service boundaries/decomposition is challenging
+- Inter-service communication is complex
+    - Monitoring calls across services
+    - Handling failures
+- Distributed transaction management is difficult
+    - Across multiple databases
 
-- *Key Points:*
-    - Transferring files between computers.
-    - Two connections: Control connection and Data connection.
+### Microservices Design Phases
 
-*SMTP (Simple Mail Transfer Protocol):*
+- Decomposition patterns
+- Database patterns
+- Communication patterns
+- Integration patterns
+- Deployment patterns
+- Cross-cutting concerns like monitoring, logging
 
-- *Key Points:*
-    - Sending emails.
-    - Works with IMAP for receiving and reading emails.
+### Decomposition Patterns
 
-*IMAP (Internet Message Access Protocol):*
-
-- *Key Points:*
-    - Receiving and reading emails.
-    - Allows access to emails from multiple devices.
-
-### *Transport Layer Protocols:*
-
-- *TCP (Transmission Control Protocol):*
-    - *Key Points:*
-        - Connection-oriented (establishes a virtual connection).
-        - Divides data into packets and sequences them for reliable transmission.
-        - Provides error checking and retransmission.
-    - *Use Case:* WhatsApp, applications requiring reliable data transfer.
-- *UDP (User Datagram Protocol):*
-    - *Key Points:*
-        - Connectionless.
-        - Sends data in packets without establishing a connection.
-        - No guarantee of delivery or order.
-        - Faster and more efficient than TCP.
-    - *Use Case:* Live streaming, video calling, applications where some data loss is acceptable.
-
-### *Key Takeaways:*
-
-- *Understanding network protocols is crucial for designing distributed systems.*
-- *Client-server and peer-to-peer models are fundamental architectures for communication.*
-- *TCP provides reliable data transfer, while UDP prioritizes speed.*
-- *The choice of protocol depends on the specific requirements of the application.*
+- By business capability
+    - Split based on business functions like order mgmt, inventory, etc
+- By subdomain - Domain Driven Design (DDD)
+    - Split large domains into multiple services
+        - E.g. splitting payment domain
